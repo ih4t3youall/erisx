@@ -9,6 +9,10 @@ import java.util.List;
 public class ReadThread  implements Runnable {
     private SocketChannel client;
     private int messagesSended;
+    private int cont = 0;
+    private StringBuilder stringBuilder = new StringBuilder();
+    private List<String> messages = new LinkedList<String>();
+    private String message = "";
 
     public ReadThread(SocketChannel client,int messagesSended){
         this.client=client;
@@ -22,10 +26,7 @@ public class ReadThread  implements Runnable {
             ByteBuffer buffer = ByteBuffer.allocate(1024);
             while (contMessageReceived < messagesSended) {
                 buffer.clear();
-                System.out.println("before buffer");
                 int numRead = client.read(buffer);
-                System.out.println("after buffer " + contadeur);
-                contadeur++;
                 byte[] data = new byte[numRead];
                 System.arraycopy(buffer.array(), 0, data, 0, numRead);
                 String parsedData = new String(data);
@@ -44,25 +45,13 @@ public class ReadThread  implements Runnable {
             e.printStackTrace();
         }
 
-
-
     }
 
-    private int contadeur = 0;
-
-    private int cont = 0;
-    private StringBuilder stringBuilder = new StringBuilder();
-    private List<String> messages = new LinkedList<String>();
-
-    String message = "";
 
     private List<String> checkMessage(String incomingMessage) {
 
         this.message = this.message +incomingMessage;
         messages.clear();
-        System.out.println(incomingMessage);
-        System.out.println(message);
-        System.out.println(cont);
         cont =0;
         stringBuilder = new StringBuilder();
 
@@ -75,7 +64,6 @@ public class ReadThread  implements Runnable {
                 message = message.substring(index+1, message.length());
             }else {
                 stringBuilder.append(message);
-
             }
 
             if (cont == 16) {
@@ -87,7 +75,6 @@ public class ReadThread  implements Runnable {
 
         message = stringBuilder.toString();
         return messages;
-
 
     }
 }

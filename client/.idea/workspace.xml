@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5928f4f2-7397-439f-81e4-bb696e7fa137" name="Default Changelist" comment="" />
+    <list default="true" id="5928f4f2-7397-439f-81e4-bb696e7fa137" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/erisx.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/erisx/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/erisx/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/erisx/ReadThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/erisx/ReadThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ar/com/erisx/Sender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/com/erisx/Sender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ar/com/erisx/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ar/com/erisx/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ar/com/erisx/ReadThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ar/com/erisx/ReadThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ar/com/erisx/Sender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ar/com/erisx/Sender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/ar/com/erisx/CheckMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/ar/com/erisx/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/ar/com/erisx/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/ar/com/erisx/ServerV2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/ar/com/erisx/Statistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/ar/com/erisx/Statistics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/ar/com/erisx/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/ar/com/erisx/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/ar/com/erisx/Statistics.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/ar/com/erisx/Statistics.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,9 +33,14 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1WfTvtBwpMuChkVwqTuxvwG4un1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../server" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
@@ -107,6 +130,17 @@
       <updated>1579539882034</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

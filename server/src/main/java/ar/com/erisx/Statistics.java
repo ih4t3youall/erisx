@@ -17,7 +17,6 @@ public class Statistics {
     }
 
     public void end(){
-        //this.finalTime =  this.startTime - System.currentTimeMillis();
         this.finalTime =  System.currentTimeMillis() -this.startTime   ;
         this.printStatistics();
     }

@@ -18,9 +18,6 @@ public class Server{
 
     private Selector selector;
     private InetSocketAddress listenAddress;
-    private Map<SocketChannel,List> dataMapper;
-    private BlockingQueue<SelectionKey> queue;
-    private int cont =0;
     private Map<String,Statistics> statisticsMap = new HashMap<String, Statistics>();
     private Map<String,CheckMessage> checkMessages = new HashMap<String,CheckMessage>();
 
@@ -31,7 +28,6 @@ public class Server{
     }
 
 
-    //accept a connection made to this channel's socket
     private void accept(SelectionKey key) throws IOException {
         ServerSocketChannel serverChannel = (ServerSocketChannel) key.channel();
         SocketChannel channel = serverChannel.accept();
@@ -40,8 +36,6 @@ public class Server{
         SocketAddress remoteAddr = socket.getRemoteSocketAddress();
         System.out.println("Connected to: " + remoteAddr);
 
-        // register channel with selector for further IO
-        dataMapper.put(channel, new ArrayList());
         channel.register(this.selector, SelectionKey.OP_READ);
     }
 
@@ -51,7 +45,6 @@ public class Server{
         CronStatistics  cron = new CronStatistics(statisticsMap);
         timer.scheduleAtFixedRate(cron,0,5000);
         listenAddress = new InetSocketAddress("localhost", 8090);
-        dataMapper = new HashMap<SocketChannel,List>();
         this.selector = Selector.open();
         ServerSocketChannel serverChannel = ServerSocketChannel.open();
         serverChannel.configureBlocking(false);
@@ -65,7 +58,6 @@ public class Server{
 
             this.selector.select();
             long start = System.currentTimeMillis();
-
             Iterator keys = this.selector.selectedKeys().iterator();
 
             while (keys.hasNext()){
@@ -89,7 +81,6 @@ public class Server{
 
     }
 
-    //read from the socket channel
     private void read(SelectionKey key) throws IOException {
 
         SocketChannel channel = (SocketChannel) key.channel();
@@ -102,7 +93,6 @@ public class Server{
         }
 
         if (numRead == -1) {
-            this.dataMapper.remove(channel);
             Socket socket = channel.socket();
             SocketAddress remoteAddr = socket.getRemoteSocketAddress();
             System.out.println("Connection closed by client: " + remoteAddr);
@@ -116,7 +106,6 @@ public class Server{
         byte[] data = new byte[numRead];
         System.arraycopy(buffer.array(), 0, data, 0, numRead);
         String message = new String(data);
-        System.out.println(contador++);
 
         List<String> wrappedMessages = checkMessages.get(clientUrl).check(message);
         statisticsMap.get(clientUrl).messagesProcessed(wrappedMessages.size());
@@ -129,7 +118,6 @@ public class Server{
 
         buffer.clear();
     }
-    int contador = 0;
 
 
 

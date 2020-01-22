@@ -19,10 +19,7 @@ public class Client{
         try{
             new Client();
         }catch(IOException e){
-
-
             e.printStackTrace();
-
         }catch(InterruptedException e){
             e.printStackTrace();
 
@@ -36,7 +33,6 @@ public class Client{
 
         FileGenerator fileGenerator = new FileGenerator();
         List<Path> path = readFiles(fileGenerator.getFileLocation());
-
 
         if (path == null){
             System.exit(1);
